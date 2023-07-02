@@ -1,0 +1,38 @@
+﻿@model List<UsuarioApontamentoViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Quantidade de Horas</th>
+            @foreach (var diaSemana in Enum.GetValues(typeof(DayOfWeek)))
+            {
+                <th>@diaSemana</th>
+            }
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (var usuarioApontamento in Model)
+            {
+                <tr>
+                    <td>@usuarioApontamento.Usuario</td>
+                    <td>@usuarioApontamento.QuantidadeHoras</td>
+                    @foreach (var diaSemana in Enum.GetValues(typeof(DayOfWeek)))
+                    {
+                        <td>@(usuarioApontamento.DataSemanaEspecifica != null ? (usuarioApontamento.DataSemanaEspecifica.Value.DayOfWeek == (DayOfWeek)diaSemana ? usuarioApontamento.DataSemanaEspecifica.Value.ToString("yyyy-MM-dd") : "") : "")</td>
+                    }
+                    <td>@usuarioApontamento.Status</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Nenhum apontamento encontrado</td>
+            </tr>
+        }
+    </tbody>
+</table>

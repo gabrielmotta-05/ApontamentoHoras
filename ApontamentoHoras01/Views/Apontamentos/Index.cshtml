@@ -1,0 +1,119 @@
+﻿@model List<SeuProjeto.ViewModels.ApontamentoHorasViewModel>
+
+<style>
+    /* Defina a margem superior do início da página até a pesquisa de data */
+    .conteudo-inicial {
+        margin-top: 20px; /* Ajuste o valor conforme necessário */
+    }
+
+    /* Defina a margem inferior após a pesquisa de data */
+    .pesquisa-data {
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+    }
+
+    /* Centralize as colunas */
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        table th,
+        table td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        table th {
+            background-color: #f0f0f0;
+        }
+
+    /* Cores para os status */
+    .status-aguardando {
+        color: orange;
+    }
+
+    .status-aprovado {
+        color: green;
+    }
+
+    .status-reprovado {
+        color: red;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Quantidade de Horas</th>
+            @for (var i = 0; i < 7; i++)
+            {
+                <th>@DateTime.Today.AddDays(i).ToString("dddd")</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            <div class="conteudo-inicial">
+                <!-- Conteúdo antes da pesquisa de data -->
+                <!-- Adicione aqui o código HTML e conteúdo que deseja aumentar o espaço -->
+            </div>
+
+            <div class="pesquisa-data">
+                @using (Html.BeginForm("PesquisaData", "Apontamentos", FormMethod.Get))
+                {
+                    <div>
+                        <label for="dataInicio">Data de Início:</label>
+                        <input type="date" id="dataInicio" name="dataInicio" value="@ViewBag.DataInicio" />
+
+                        <label for="dataFim">Data de Fim:</label>
+                        <input type="date" id="dataFim" name="dataFim" value="@ViewBag.DataFim" />
+
+                        <button type="submit">Pesquisar</button>
+                    </div>
+                }
+            </div>
+
+            foreach (var apontamento in Model)
+            {
+                <tr>
+                    <td>@apontamento.Usuario</td>
+                    <td>@apontamento.QuantidadeHoras</td>
+                    @for (var i = 0; i < 7; i++)
+                    {
+                        <td>
+                            @if (apontamento.PrimeiroDiaSemana.AddDays(i).Date == DateTime.Today.AddDays(i).Date)
+                            {
+                                if (apontamento.Status == "Aguardando")
+                                {
+                                    <span class="status-aguardando">Aguardando</span>
+                                }
+                                else if (apontamento.Status == "Aprovado")
+                                {
+                                    <span class="status-aprovado">Aprovado</span>
+                                }
+                                else if (apontamento.Status == "Reprovado")
+                                {
+                                    <span class="status-reprovado">Reprovado</span>
+                                }
+                                else
+                                {
+                                    <span></span>
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">Nenhum apontamento encontrado</td>
+            </tr>
+        }
+    </tbody>
+</table>
