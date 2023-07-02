@@ -79,7 +79,6 @@ C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\bin\pt
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\obj\Debug\ApontamentoHoras01.csproj.AssemblyReference.cache
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\obj\Debug\ApontamentoHoras01.csproj.CoreCompileInputs.cache
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\obj\Debug\ApontamentoHoras01.csproj.CopyComplete
 C:\Users\gabriel.motta\source\repos\ApontamentoHoras01\ApontamentoHoras01\obj\Debug\ApontamentoHoras01.dll

@@ -129,6 +129,7 @@
     <Compile Include="Models\Apontamento.cs" />
     <Compile Include="Models\ApontamentoHoras.cs" />
     <Compile Include="Models\ApontamentoHorasViewModel.cs" />
+    <Compile Include="Models\UsuarioApontamentoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

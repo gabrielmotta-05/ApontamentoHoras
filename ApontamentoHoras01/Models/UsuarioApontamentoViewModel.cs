@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SeuProjeto.ViewModels
 {
-    public class ApontamentoHorasViewModel
+    public class UsuarioApontamentoViewModel
     {
         public string Usuario { get; set; }
         public int QuantidadeHoras { get; set; }
