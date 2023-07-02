@@ -22,7 +22,7 @@
                     <td>@usuarioApontamento.QuantidadeHoras</td>
                     @foreach (var diaSemana in Enum.GetValues(typeof(DayOfWeek)))
                     {
-                        <td>@(usuarioApontamento.DataSemanaEspecifica != null ? (usuarioApontamento.DataSemanaEspecifica.Value.DayOfWeek == (DayOfWeek)diaSemana ? usuarioApontamento.DataSemanaEspecifica.Value.ToString("yyyy-MM-dd") : "") : "")</td>
+                        <td>@*@(usuarioApontamento.DataSemanaEspecifica != null ? (usuarioApontamento.DataSemanaEspecifica.Value.DayOfWeek == (DayOfWeek)diaSemana ? usuarioApontamento.DataSemanaEspecifica.Value.ToString("yyyy-MM-dd") : "") : "")*@</td>
                     }
                     <td>@usuarioApontamento.Status</td>
                 </tr>
